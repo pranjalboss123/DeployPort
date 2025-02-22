@@ -56,6 +56,7 @@ export default function Contact() {
               <div className="flex items-center space-x-4">
                 <Linkedin className="h-6 w-6 text-primary" />
                 <Link
+                
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
