@@ -121,17 +121,14 @@ export default function Home() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative w-full h-[400px] lg:h-[600px] rounded-2xl overflow-hidden hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300"
+              className="relative w-full h-[400px] lg:h-[600px] shadow-glow rounded-2xl overflow-hidden  transform hover:scale-[1.5]] transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-2xl" />
-              <Image
+              <Image 
                 src="Portme.jpg"
                 alt="Professional headshot"
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover  rounded-2xl"
                 priority
               />
             </motion.div>
