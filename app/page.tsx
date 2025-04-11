@@ -90,19 +90,19 @@ export default function Home() {
                   </motion.h2>
                 </motion.div>
               </motion.div>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0"
               >
-                A passionate Full Stack Developer with expertise in modern web technologies. 
-                Proficient in multiple programming languages and frameworks, with a strong 
-                foundation in both frontend and backend development. Currently pursuing B.Tech 
+                A passionate Full Stack Developer with expertise in modern web technologies.
+                Proficient in multiple programming languages and frameworks, with a strong
+                foundation in both frontend and backend development. Currently pursuing B.Tech
                 in Computer Science while actively building innovative solutions.
               </motion.p>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -120,8 +120,8 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <motion.div
-              className="relative w-full h-[400px] lg:h-[600px] shadow-glow rounded-2xl overflow-hidden  transform hover:scale-[1.5]] transition-all duration-300"
+            {/* <motion.div
+              className="relative w-full h-[400px] lg:h-[500px] shadow-glow rounded-2xl overflow-hidden  transform hover:scale-[1.5]] transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-2xl" />
               <Image 
@@ -131,7 +131,22 @@ export default function Home() {
                 className="object-cover  rounded-2xl"
                 priority
               />
+            </motion.div> */}
+            <motion.div
+              className="relative w-full h-[400px] lg:h-[600px] shadow-glow rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-2xl" />
+              <Image
+                src="Portme.jpg"
+                alt="Professional headshot"
+                layout="responsive"
+                width={800}
+                height={1000}
+                className="object-contain rounded-2xl w-full h-full"
+                priority
+              />
             </motion.div>
+
           </div>
         </motion.div>
       </section>
