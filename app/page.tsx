@@ -133,7 +133,7 @@ export default function Home() {
               />
             </motion.div> */}
             <motion.div
-              className="relative w-full h-[400px] lg:h-[600px] shadow-glow rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-300"
+              className="relative w-full h-[400px] lg:h-[570px] shadow-glow rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-2xl" />
               <Image
