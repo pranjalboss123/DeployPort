@@ -1,5 +1,4 @@
-'use client';
-
+"use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -68,14 +67,25 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-500">{project.title}</h3>
                 <div className="relative">
-                  <p className="text-muted-foreground mb-4 line-clamp-4 group-hover:line-clamp-none transition-all duration-700 ease-in-out">{project.description}</p>
+                  {/* <p className="text-muted-foreground mb-4 line-clamp-4 group-hover:line-clamp-none transition-transform duration-700 ease-in-out">{project.description}</p> */}
+                  <div className="relative group/desc">
+                    <p
+                      className="text-muted-foreground mb-4 overflow-hidden transition-all duration-700 ease-in-out max-h-[6.5rem] group-hover/desc:max-h-[1000px]"
+                      style={{ willChange: 'max-height' }}
+                    >
+                      {project.description}
+                    </p>
+                    {/* Fade overlay */}
+                    <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none opacity-100 group-hover/desc:opacity-0 transition-opacity duration-700" />
+                  </div>
+
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
