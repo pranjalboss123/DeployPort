@@ -146,8 +146,8 @@ export default function Home() {
                 priority
               />
             </motion.div>
-
           </div>
+
         </motion.div>
       </section>
 
