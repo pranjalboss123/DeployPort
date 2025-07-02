@@ -1,0 +1,8 @@
+.fade {
+    @apply bg-gradient-to-t from-white to-transparent pointer-events-none;
+  }
+  
+  .dark .fade {
+    @apply bg-gradient-to-t from-black to-transparent pointer-events-none;
+  }
+  

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-
+import "./style.css";
 const projects = [
   {
     title: 'Shakti - Women Security Surveillance',
@@ -83,7 +83,7 @@ export default function Projects() {
                       {project.description}
                     </p>
                     {/* Fade overlay */}
-                    <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none opacity-100 group-hover/desc:opacity-0 transition-opacity duration-700" />
+                    <div className="absolute bottom-0 left-0 w-full h-12 fade opacity-100 group-hover/desc:opacity-0 transition-opacity duration-700" />
                   </div>
 
                 </div>
