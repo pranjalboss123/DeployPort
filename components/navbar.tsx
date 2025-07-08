@@ -104,6 +104,23 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
+              {/* Mobile Theme Toggle */}
+              {mounted && (
+                <div className="px-3 pt-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                    className="hover:scale-110 transition-transform"
+                  >
+                    {theme === 'dark' ? (
+                      <Sun className="h-5 w-5" />
+                    ) : (
+                      <Moon className="h-5 w-5" />
+                    )}
+                  </Button>
+                </div>
+              )}
             </div>
           </motion.div>
         )}

@@ -77,7 +77,7 @@ export default function Projects() {
                   {/* <p className="text-muted-foreground mb-4 line-clamp-4 group-hover:line-clamp-none transition-transform duration-700 ease-in-out">{project.description}</p> */}
                   <div className="relative group/desc">
                     <p
-                      className="text-muted-foreground mb-4 overflow-hidden transition-all duration-700 ease-in-out max-h-[6.5rem] group-hover/desc:max-h-[1000px]"
+                      className="text-muted-foreground mb-4 overflow-hidden transition-all duration-500 ease-in-out max-h-[6.5rem] group-hover/desc:max-h-[1000px]"
                       style={{ willChange: 'max-height' }}
                     >
                       {project.description}
