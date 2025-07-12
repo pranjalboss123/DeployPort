@@ -4,7 +4,9 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import Head from 'next/head';
+// import Head from 'next/head';
+import SeoHead from '@/components/SeoHead'; // 👈 import your SEO component
+
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -55,49 +57,66 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <Head>
-      <meta name="google-site-verification" content="TMbPyw0r8668R8095NTMVCtY0hQDTMkKALC4YPJ4I5o" />
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Rishikesh Gupta',
-        url: 'https://rishikeshgupta.vercel.app/',
-        image: 'https://rishikeshgupta.vercel.app/pp.jpg',
-        sameAs: [
-          'https://www.linkedin.com/in/rishikesh-gupta-b31936228/', 
-          'https://github.com/pranjalboss123',           
-          // more profiles if you have
-        ],
-        jobTitle: 'Full Stack Developer',
-        worksFor: {
-          '@type': 'Organization',
-          name: 'AntmoreLabs pvt. Ltd.',
-        },
-        description:
-          'Professional full stack developer skilled in building modern web apps with React, Next.js, Node.js, and MongoDB.',
-      }),
-    }}
-  />
-</Head>
+//     <html lang="en" suppressHydrationWarning>
+//       <Head>
+//       <meta name="google-site-verification" content="TMbPyw0r8668R8095NTMVCtY0hQDTMkKALC4YPJ4I5o" />
+//   <script
+//     type="application/ld+json"
+//     dangerouslySetInnerHTML={{
+//       __html: JSON.stringify({
+//         '@context': 'https://schema.org',
+//         '@type': 'Person',
+//         name: 'Rishikesh Gupta',
+//         url: 'https://rishikeshgupta.vercel.app/',
+//         image: 'https://rishikeshgupta.vercel.app/pp.jpg',
+//         sameAs: [
+//           'https://www.linkedin.com/in/rishikesh-gupta-b31936228/', 
+//           'https://github.com/pranjalboss123',           
+//           // more profiles if you have
+//         ],
+//         jobTitle: 'Full Stack Developer',
+//         worksFor: {
+//           '@type': 'Organization',
+//           name: 'AntmoreLabs pvt. Ltd.',
+//         },
+//         description:
+//           'Professional full stack developer skilled in building modern web apps with React, Next.js, Node.js, and MongoDB.',
+//       }),
+//     }}
+//   />
+// </Head>
 
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+//       <body className={inter.className}>
+//         <ThemeProvider
+//           attribute="class"
+//           defaultTheme="system"
+//           enableSystem
+//           disableTransitionOnChange
+//         >
+//           <div className="flex min-h-screen flex-col">
+//             <Navbar />
+//             <main className="flex-1">{children}</main>
+//             <Footer />
+//           </div>
+//         </ThemeProvider>
+//       </body>
+//     </html>
+<html lang="en" suppressHydrationWarning>
+  <body className={inter.className}>
+    <SeoHead />
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+    </ThemeProvider>
+  </body>
+</html>
   );
 }
