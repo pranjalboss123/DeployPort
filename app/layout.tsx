@@ -46,6 +46,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/pp.jpg',
   },
+  
 };
 
 export default function RootLayout({
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Head>
+      <meta name="google-site-verification" content="TMbPyw0r8668R8095NTMVCtY0hQDTMkKALC4YPJ4I5o" />
   <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{
