@@ -40,7 +40,7 @@ export default function Footer() {
               <Github className="h-6 w-6" />
             </Link>
             <Link
-              href="https://in.linkedin.com/in/rishikesh-gupta-b31936228"
+              href="https://in.linkedin.com/in/rishikeshguptaa"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"

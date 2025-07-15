@@ -60,6 +60,7 @@ export default function Education() {
                     { semester: '2nd Semester', sgpa: '8.86' },
                     { semester: '3rd Semester', sgpa: '7.96' },
                     { semester: '4th Semester', sgpa: '8.17' },
+                    { semester: '5th Semester', sgpa: '8.17' },
                   ].map((item, index) => (
                     <motion.div
                       key={item.semester}
@@ -85,10 +86,17 @@ export default function Education() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold mb-2">Angels Public School</h2>
+                <div className='flex gap-4'>
+                <div className="inline-block px-4 py-2 rounded-lg bg-primary/5">
                 <p className="text-xl text-muted-foreground mb-2">Intermediate (12th Class - PCM)</p>
                 <p className="text-muted-foreground mb-4">2022 • Delhi</p>
+                  <p className="text-primary font-bold">Percentage: 80%</p>
+                </div>
                 <div className="inline-block px-4 py-2 rounded-lg bg-primary/5">
+                <p className="text-xl text-muted-foreground mb-2">Senior Secondary (10th Class - PCM)</p>
+                <p className="text-muted-foreground mb-4">2020 • Delhi</p>
                   <p className="text-primary font-bold">Percentage: 86%</p>
+                </div>
                 </div>
               </div>
             </div>

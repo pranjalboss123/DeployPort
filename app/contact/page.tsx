@@ -61,7 +61,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  https://in.linkedin.com/in/rishikesh-gupta-b31936228                </Link>
+                  https://in.linkedin.com/in/rishikeshguptaa                </Link>
               </div>
             </div>
           </motion.div>
