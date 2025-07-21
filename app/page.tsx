@@ -1,5 +1,5 @@
 'use client';
-
+import SkillCard from '@/components/SkillCard';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Code, Layout, Server, Cpu, Database, BookOpen } from 'lucide-react';
@@ -8,18 +8,66 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, staggerChildren: 0.2 } },
+};
+const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
+
+const skills = [
+  {
+    icon: <Code className="h-12 w-12 text-primary mb-4" />,
+    title: 'Programming Languages',
+    details: [
+
+      { name: 'JavaScript', level: 9, projects: ['Portfolio', 'Chat App'] },
+      { name: 'TypeScript', level: 8, projects: ['Next.js Blog'] },
+      { name: 'Python', level: 8, projects: ['Data Parser'] },
+      { name: 'C++', level: 8, projects: ['DSA'] },
+    ],
+  },
+  {
+    icon: <Layout className="h-12 w-12 text-primary mb-4" />,
+    title: 'Frameworks',
+    details: [
+      { name: 'React', level: 9, projects: ['Portfolio', 'Dashboard'] },
+      { name: 'Next.js', level: 8, projects: ['Blog', 'E-commerce'] },
+      { name: 'Express', level: 7, projects: ['API Server'] },
+      { name: 'Tailwind CSS', level: 9, projects: ['Portfolio', 'Admin UI','Multiple projects'] },
+      { name: 'Redux Toolkit', level: 7, projects: ['State Management'] },
+      { name: 'Zustand Store', level: 6, projects: ['Worked in Internship'] },
+    ],
+  },
+  {
+    icon: <Database className="h-12 w-12 text-primary mb-4" />,
+    title: 'Databases',
+    details: [
+      { name: 'MongoDB', level: 8, projects: ['Travel App'] },
+      { name: 'MySQL', level: 8, projects: ['User Auth'] },
+      { name: 'Firebase', level: 7, projects: ['Auth', 'Firestore'] },
+    ],
+  },
+  {
+    icon: <Cpu className="h-12 w-12 text-primary mb-4" />,
+    title: 'Tools & Platforms',
+    details: [
+      { name: 'GitHub', level: 9, projects: ['All Repos'] },
+      { name: 'Postman', level: 8, projects: ['API Testing', 'Collection Runners'] },
+      { name: 'Vercel', level: 8, projects: ['Next.js Deployments'] },
+      { name: 'MongoDB Atlas', level: 7, projects: ['Cloud Database Deployment'] },
+      { name: 'Figma', level: 6, projects: ['UI Review', 'Component Referencing'] },
+    ],
+  },
+];
 const animatedTexts = [
   "Web Developer",
   "Software Developer",
-  "DevOps Engineer",
-  "Full Stack Developer"
+  "Full Stack Developer",
+  "Backend Developer",
 ];
 
 export default function Home() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+
 
   const [textIndex, setTextIndex] = useState(0);
 
@@ -49,6 +97,7 @@ export default function Home() {
       y: 0,
     },
   };
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -119,19 +168,6 @@ export default function Home() {
                 </Button>
               </motion.div>
             </div>
-
-            {/* <motion.div
-              className="relative w-full h-[400px] lg:h-[500px] shadow-glow rounded-2xl overflow-hidden  transform hover:scale-[1.5]] transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-2xl" />
-              <Image 
-                src="Portme.jpg"
-                alt="Professional headshot"
-                fill
-                className="object-cover  rounded-2xl"
-                priority
-              />
-            </motion.div> */}
             <motion.div
               className="relative w-full h-[400px] lg:h-[570px] shadow-glow rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-300"
             >
@@ -151,7 +187,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Skills Section */}
       <section className="py-20 bg-gradient-to-b from-muted/50 to-background">
         <motion.div
           ref={ref}
@@ -166,52 +201,21 @@ export default function Home() {
           >
             Skills & Expertise
           </motion.h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              variants={itemVariants}
-              className="group p-6 rounded-lg shadow-lg bg-gradient-to-br from-background to-primary/5 border border-primary/10 backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-500 hover:bg-gradient-to-tr hover:from-primary/10 hover:via-primary/5 hover:to-background relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Code className="h-12 w-12 mb-4 text-primary relative z-10" />
-              <h3 className="text-xl font-semibold mb-2 relative z-10">Programming Languages</h3>
-              <p className="text-muted-foreground relative z-10">
-                Java, C, JavaScript, C++, Python
-              </p>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="group p-6 rounded-lg shadow-lg bg-gradient-to-br from-background to-primary/5 border border-primary/10 backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-500 hover:bg-gradient-to-tr hover:from-primary/10 hover:via-primary/5 hover:to-background relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Layout className="h-12 w-12 mb-4 text-primary relative z-10" />
-              <h3 className="text-xl font-semibold mb-2 relative z-10">Frameworks</h3>
-              <p className="text-muted-foreground relative z-10">
-                Node.js, Express.js, React, Next.js, Bootstrap
-              </p>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="group p-6 rounded-lg shadow-lg bg-gradient-to-br from-background to-primary/5 border border-primary/10 backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-500 hover:bg-gradient-to-tr hover:from-primary/10 hover:via-primary/5 hover:to-background relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Database className="h-12 w-12 mb-4 text-primary relative z-10" />
-              <h3 className="text-xl font-semibold mb-2 relative z-10">Databases</h3>
-              <p className="text-muted-foreground relative z-10">
-                SQL, MongoDB
-              </p>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="group p-6 rounded-lg shadow-lg bg-gradient-to-br from-background to-primary/5 border border-primary/10 backdrop-blur-sm hover:shadow-xl hover:scale-105 transition-all duration-500 hover:bg-gradient-to-tr hover:from-primary/10 hover:via-primary/5 hover:to-background relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Cpu className="h-12 w-12 mb-4 text-primary relative z-10" />
-              <h3 className="text-xl font-semibold mb-2 relative z-10">Tools & Platforms</h3>
-              <p className="text-muted-foreground relative z-10">
-                VS Code, Postman, Git, Google Cloud
-              </p>
-            </motion.div>
+            {skills.map((skill) => (
+              <motion.div key={skill.title} variants={itemVariants} className="h-full">
+                <div className="h-full">
+                  <SkillCard
+                    icon={skill.icon}
+                    title={skill.title}
+                    details={skill.details}
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
+
         </motion.div>
       </section>
     </div>
