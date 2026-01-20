@@ -7,6 +7,14 @@ import Link from 'next/link';
 import "./style.css";
 const projects = [
   {
+    title: 'NyayaSetu: Case Analysis for Lawyers',
+    description: "Nyaya Setu is an AI-driven analysis platform designed for legal professionals to streamline case preparation. It enables lawyers to upload case documents and related data, which are then processed using AI to extract structured insights, identify key issues, potential loopholes, and critical arguments. The platform assists in evidence review, fact correlation, and strategic preparation before hearings, reducing manual effort and improving decision-making accuracy through data-backed legal insights.",
+    image: 'https://images.unsplash.com/photo-1607778914885-787b06728b07?auto=format&fit=crop&q=80',
+    tags: ['NEXT.JS', 'OpenCV', 'TensorFlow', 'CNN', 'Pandas', 'Numpy'],
+    github: 'https://github.com/pranjalboss123/NyayaSetu',
+    link:"https://nyayasetu-rishikesh.vercel.app/"
+  },
+  {
     title: 'Shakti - Women Security Surveillance',
     description: 'An innovative AI-powered surveillance system designed to enhance women\'s security through real-time gender detection. Utilizing advanced computer vision and deep learning techniques, Shakti analyzes video feeds to identify potential security threats. The system employs a sophisticated CNN architecture for accurate gender detection, processes data streams using OpenCV, and leverages TensorFlow for robust machine learning capabilities. Built with scalability in mind, it includes comprehensive data analysis tools using Pandas and Numpy for pattern recognition and threat assessment.',
     image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80',
@@ -14,11 +22,13 @@ const projects = [
     github: 'https://github.com/pranjalboss123/SHAKTI-Women-Security-Surveillance-System-',
   },
   {
-    title: 'Kisaan Mart',
+    title: 'Krishi Setu',
     description: 'A revolutionary e-commerce platform empowering farmers by eliminating intermediaries from the agricultural supply chain. This full-stack application provides a direct marketplace where farmers can showcase their produce, set their own prices, and connect directly with consumers. Built with React for a dynamic frontend, Node.js and Express.js for a robust backend, and MongoDB for flexible data storage. Features include real-time price updates, inventory management, secure payment processing, and an intuitive user interface for both farmers and buyers.',
     image: 'https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&q=80',
     tags: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     github: 'https://github.com/pranjalboss123/Khet-Market--MERN-',
+    link: 'https://krishisetu-rishikesh.vercel.app'
+
   },
   {
     title: 'Swar-Shiksha',
@@ -26,6 +36,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80',
     tags: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/pranjalboss123/Swar-Shiksha',
+    link:'https://swarshiksha-rishikesh.vercel.app'
   },
   {
     title: 'Gym Management System',
@@ -104,6 +115,12 @@ export default function Projects() {
                       View Code
                     </Link>
                   </Button>
+                 {project.link && <Button asChild variant="outline" size="sm" className="hover:scale-105 transition-transform duration-300">
+                    <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      Deployed Link
+                    </Link>
+                  </Button>}
                 </div>
               </div>
             </motion.div>
