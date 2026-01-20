@@ -10,7 +10,7 @@ const projects = [
     title: 'NyayaSetu: Case Analysis for Lawyers',
     description: "Nyaya Setu is an AI-driven analysis platform designed for legal professionals to streamline case preparation. It enables lawyers to upload case documents and related data, which are then processed using AI to extract structured insights, identify key issues, potential loopholes, and critical arguments. The platform assists in evidence review, fact correlation, and strategic preparation before hearings, reducing manual effort and improving decision-making accuracy through data-backed legal insights.",
     image: 'https://images.unsplash.com/photo-1607778914885-787b06728b07?auto=format&fit=crop&q=80',
-    tags: ['NEXT.JS', 'OpenCV', 'TensorFlow', 'CNN', 'Pandas', 'Numpy'],
+    tags: ['NEXT.JS', 'Firebase', 'Auth.js', 'AI', 'Flask'],
     github: 'https://github.com/pranjalboss123/NyayaSetu',
     link:"https://nyayasetu-rishikesh.vercel.app/"
   },
